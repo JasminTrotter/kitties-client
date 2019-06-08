@@ -1,3 +1,6 @@
+# Kitties in the City
+## find queer events in your city
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
