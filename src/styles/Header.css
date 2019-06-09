@@ -1,11 +1,15 @@
-header {
+.App-header {
     background-color: white;
-    display: flex;
     align-items: center;
     justify-content: left;
     color: #9C0DFF;
     padding: 15px;
-    box-shadow: 0px 10px 14px -9px rgba(0,0,0,0.42);
+    /* -webkit-box-shadow: 0px 0px 30px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 30px 1px rgba(0,0,0,1);
+    box-shadow: 0px 0px 30px 1px rgba(0,0,0,1); */
+    -webkit-box-shadow: 0px 0px 20px -6px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0px 0px 20px -6px rgba(0,0,0,0.42);
+    box-shadow: 0px 0px 20px -6px rgba(0,0,0,0.42);
 }
 
 .App-logo {
@@ -13,6 +17,10 @@ header {
     border: 1.5px solid #CA0CE8;
 }
 
-.App-header {
+header {
+    display: flex;
+}
+
+h1 {
     padding-left: 15px;
 }
