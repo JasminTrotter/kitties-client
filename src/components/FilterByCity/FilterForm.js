@@ -1,37 +1,46 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import DropdownFilter from './DropdownFilter';
+import Select from 'react-select';
+import { cityValue } from '../../actions/filter-by-city';
+import { connect } from 'react-redux';
 
 export class FilterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: ''
+            selectedCity: null
         }
+    }
+
+    onChange(value) {
+        this.props.dispatch(cityValue(value));
     }
 
     render() {
         return (
                 <div>
                     <form>
-                       <Field
-	                	className="city-form-input"
-	                    component={DropdownFilter}
-	                    type="text"
-	                    name="city"
-	                    label="City"
-	                    onChange={(event) => this.setState({ city: event.target.value})}
+                       <Select
+                            className="city-form-input"
+                            value={this.props.selectedCity}
+                            type="text"
+                            name="city"
+                            label="City"
+                            options={[
+                                { value: 'Portland', label: 'Portland' },
+                                { value: 'Los Angeles', label: 'Los Angeles' },
+                                { value: 'San Francisco', label: 'San Francisco' },                            
+                            ]}
+                            onChange={(value) => this.onChange(value)}
 	             
-	                /> 
+	                    /> 
                     </form>
                 </div>
         );
     }
 }
 
+const mapStateToProps = (state) => ({
+    selectedCity: state.selectedCity
+});
 
-export default reduxForm({
-    form: 'filter-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('filter-form', Object.keys(errors)[0]))
-})(FilterForm);
+export default connect(mapStateToProps)(FilterForm);
