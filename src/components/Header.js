@@ -1,7 +1,6 @@
 import React from 'react';
 import kitty from '../assets/rainbow-kitty.jpeg';
 import '../styles/Header.css';
-import FilterForm from './FilterForm';
 
 export default function Header() {
     return (

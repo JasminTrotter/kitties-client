@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/EventCard.css';
-import { Portland } from '../eventCards';
+import '../../styles/EventCard.css';
+import { Portland } from './eventCards';
 
 export default function EventCard() {
 
