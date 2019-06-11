@@ -22,6 +22,7 @@ export class FilterForm extends React.Component {
                        <Select
                             className="city-form-input"
                             value={this.props.selectedCity}
+                            placeholder="Select a city..."
                             type="text"
                             name="city"
                             label="City"

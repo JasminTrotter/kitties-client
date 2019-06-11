@@ -25,3 +25,9 @@ export const Portland  = [
 export const LosAngeles = [];
 
 export const SanFrancisco = [];
+
+export default {
+    Portland,
+    LosAngeles,
+    SanFrancisco
+}
