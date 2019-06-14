@@ -1,37 +1,24 @@
 import React from 'react';
 import Select from 'react-select';
-import { cityValue } from '../../actions/filter-by-city';
-import { connect } from 'react-redux';
 
-export class FilterForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedCity: null
-        }
-    }
-
-    onChange(value) {
-        this.props.dispatch(cityValue(value));
-    }
-
+export default class FilterForm extends React.Component {
     render() {
         return (
                 <div>
                     <form>
                        <Select
                             className="city-form-input"
-                            value={this.props.selectedCity}
+                            value={this.props.city}
                             placeholder="Select a city..."
                             type="text"
                             name="city"
                             label="City"
                             options={[
                                 { value: 'Portland', label: 'Portland' },
-                                { value: 'Los Angeles', label: 'Los Angeles' },
-                                { value: 'San Francisco', label: 'San Francisco' },                            
+                                { value: 'LosAngeles', label: 'Los Angeles' },
+                                { value: 'SanFrancisco', label: 'San Francisco' },                            
                             ]}
-                            onChange={(value) => this.onChange(value)}
+                            onChange={(value) => this.props.onCityChange(value)}
 	             
 	                    /> 
                     </form>
@@ -39,9 +26,3 @@ export class FilterForm extends React.Component {
         );
     }
 }
-
-const mapStateToProps = (state) => ({
-    selectedCity: state.selectedCity
-});
-
-export default connect(mapStateToProps)(FilterForm);
